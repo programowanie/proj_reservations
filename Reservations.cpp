@@ -19,22 +19,12 @@ int Railroad_company::_start_station()
 
 int Railroad_company::_end_station()
 {
-	return random_value(15-Railroad_company._start_station, Railroad_company._start_station);
+	return random_value(15, 1);
 }
 
-int Passeger::comfort()
+int Passenger::position()
 {
-	return random_value(2, 1);
-}
-
-int Passeger::coach()
-{
-	return random_value(2, 1);
-}
-
-int Passeger::position()
-{
-	return random_value(3, 1);
+	return random_value(6, 1);
 }
 
 

@@ -1,30 +1,59 @@
 #include "Reservations.h"
+#include "Reservations.cpp"
+
 
 #include <iostream> 
-#include <cstdlib>
-#include <ctime>
 
 using namespace std;
 
 int main(int argc, char *argv[])
 {
-	srand(time(NULL));
-	int quantity=rand()%1000+1;
-	int parameters[5];
+	int quantity=random_value(1, 1000);
+	int parameters[3];
+	int plan_cars=random_value(1, 5)*100;
+	int extra_cars=random_value(1, 6);
 
-	vector<vector<int> > Occupancy;
-	vector<int> occupancy(15);
+	vector < vector < int > > Occupancy;
+	vector < int > occupancy(3);
 
-    fill(occupancy.begin(), occupancy.end(), 0);
- 
-    for (int i=0; i<1; i++)
+	for (int i=0; i<plan_cars; i++)
     {
     	Occupancy.push_back(occupancy);
      }
 
-     Passenger account[quantity];
+     Passenger account;
+     Railroad_company _account;
 
      for(int i=0; i<quantity; i++)
-     	parameters[0]=account.coach;
+     {
+     	parameters[0]=account.position();
+     	parameters[1]=_account._start_station();
+     	parameters[2]=_account._end_station();
 
- }
+     	while(parameters[3]<=parameters[2])
+     	{
+     		parameters[3]=_account._end_station();
+     	} 
+
+     	for(int j=1; j<plan_cars; j++)
+     	{
+     		if(j%10>6) j++;
+     		else
+     		{
+     			if(Occupancy[j][0]!=0) j++;
+     			else {
+     				Occupancy[j][1]=parameters[1];
+     				Occupancy[j][2]=parameters[2];
+     			}
+
+     		}
+     		
+
+     		}
+     		cout<<i<<" "<<Occupancy[i][1]<<" "<<Occupancy[i][2]<<endl;
+     	}
+
+     }
+
+
+ 

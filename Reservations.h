@@ -8,8 +8,6 @@ using namespace std;
 class Passenger
 {
 public:
-	int comfort();
-	int coach();
 	int position();
 };
 
