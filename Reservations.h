@@ -5,6 +5,8 @@
 
 using namespace std;
 
+int random_value(int a, int b);
+
 class Passenger
 {
 public:
@@ -25,8 +27,8 @@ public:
 class Railroad_company
 {
 public:
-	int _start_station();
-	int _end_station();
+	int _start_station(int a);
+	int _end_station(int a, int b);
 	int _number_of_car, _number_of_seat;
 
 };

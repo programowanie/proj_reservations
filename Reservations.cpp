@@ -1,25 +1,23 @@
 #include "Reservations.h"
 
 #include <cstdlib>
-#include <ctime>
 
 using namespace std;
 
 
 int random_value(int a, int b)
 {
-	srand(time(NULL));
 	return rand()%a+b;
 }
 
-int Railroad_company::_start_station()
+int Railroad_company::_start_station(int a)
 {
-	return random_value(14, 1);
+	return random_value(a-1, 1);
 }
 
-int Railroad_company::_end_station()
+int Railroad_company::_end_station(int a, int b)
 {
-	return random_value(15, 1);
+	return random_value(a-b, b+1);
 }
 
 int Passenger::position()
