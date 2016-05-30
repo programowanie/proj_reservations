@@ -1,0 +1,37 @@
+32
+38110
+IC Malczewski
+0
+Przemysl Glowny
+Przemysl Zasanie
+Jaroslaw
+Przeworsk
+Lancut 
+Rzeszow Glowny
+Sedziszow Malopolski
+Ropczyce
+Debica
+Tarnow 
+Brzesko Okocim
+Bochnia
+Krakow Plaszow
+Krakow Glowny
+Czestochowa Stradom
+Lubliniec
+Opole Glowne
+Brzeg
+Wroclaw Glowny
+Wroclaw Mikolajow
+Leszno
+Poznan Glowny
+Oborniki Wielkopolskie Miasto
+Rogożno Wielkopolskie
+Chodziez 
+Pila Glowna
+Jastrowie
+Szczecinek
+Bialogard
+Koszalin
+Slawno
+Slupsk
+
