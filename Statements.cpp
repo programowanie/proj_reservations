@@ -11,7 +11,7 @@ void extra_car(int plan_cars)
 
 void no_extra_car(int no)
 {
-	cout<<"Przepraszamy, brak dostępnych miejsc"<<endl;
+	cout<<"Przepraszamy, brak dostępnych miejsc!"<<endl;
 	cout<<"Liczba pasazerow bez miesjca do siedzenia: "<<no<<endl;
 }
 

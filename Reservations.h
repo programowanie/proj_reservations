@@ -11,9 +11,11 @@ class Passenger
 {
 public:
 	int position();
+	int _start_station(int a);
+	int _end_station(int a, int b);
 };
 
-class Tickets
+/*class Tickets
 {
 private:
 	int _seat, _car;
@@ -22,13 +24,12 @@ private:
 public:
 	int seat_number() {return _seat;}
 	int car_number() {return _car;}
-};
+};*/
 
-class Railroad_company
+/*class Railroad_company
 {
 public:
-	int _start_station(int a);
-	int _end_station(int a, int b);
+	
 	int _number_of_car, _number_of_seat;
 
-};
+};*/

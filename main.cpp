@@ -16,16 +16,17 @@ int main(int argc, char *argv[])
 {
     srand(time(NULL));
 
-	int quantity=random_value(70, 1);
+	int quantity=random_value(700, 1);
 	int parameters[3];
-	int plan_cars=random_value(2, 1)*100;
+	int plan_cars=random_value(5, 3)*100;
 	int extra_cars=random_value(10, 1);
 	int temp=0;
 	int temp1=plan_cars;
+	int quantity1=quantity;
 	bool ending=false;
 
 	ifstream train;
-	train.open("train3.txt");
+	train.open("train1.txt");
     ofstream diagram;
     diagram.open("diagram.txt");
 
@@ -39,8 +40,8 @@ int main(int argc, char *argv[])
 
 	int stations = atoi(data[0].c_str());
 
-	diagram<<endl<<data[1]<<endl<<data[2]<<endl<<data[4]<<endl<<data[3+stations]<<endl<<endl;
-	cout<<endl<<data[1]<<endl<<data[2]<<endl<<data[4]<<endl<<data[3+stations]<<endl<<endl;
+	diagram<<endl<<data[1]<<endl<<data[2]<<endl<<data[4]<<" -> "<<data[3+stations]<<endl<<endl;
+	cout<<endl<<data[1]<<endl<<data[2]<<endl<<data[4]<<" -> "<<data[3+stations]<<endl<<endl;
 
 	info(plan_cars, extra_cars, quantity);
 	diagram<<endl<<"Planowa ilosc wagonow: "<<plan_cars/100<<endl;
@@ -56,9 +57,10 @@ int main(int argc, char *argv[])
      }
 
      Passenger account;
-     Railroad_company _account;
 
-     for(int i=0; i<quantity; i++)
+     int seat=0;
+
+     for(int i=0; seat<quantity1; i++)
      {
      	if(i+1>plan_cars)
      	{
@@ -76,20 +78,19 @@ int main(int argc, char *argv[])
     		}
     		else
     		{
-    			no_extra_car(temp1-plan_cars/100*60);
+    			no_extra_car(quantity1-plan_cars/100*60);
     			diagram<<"Przepraszamy, brak dostępnych miejsc"<<endl;
-				diagram<<"Liczba pasazerow bez miesjca do siedzenia: "<<temp1-plan_cars/100*60<<endl;
+				diagram<<"Liczba pasazerow bez miesjca do siedzenia: "<<quantity1-plan_cars/100*60<<endl;
     			quantity=quantity-i;
     			break;
     		} 
      	}
 
-     	parameters[0]=_account._start_station(stations);
-     	parameters[1]=_account._end_station(stations, parameters[0]);
+     	parameters[0]=account._start_station(stations);
+     	parameters[1]=account._end_station(stations, parameters[0]);
      	parameters[2]=account.position();
 
-     	if((i%10>6)||(i%10==0)) quantity++;
-     	else if((parameters[2]==(6))||(parameters[2]==5))
+		if((parameters[2]==(6))||(parameters[2]==5))
      	{
      		for(int j=1; j<plan_cars; j++)
      		{
@@ -103,6 +104,7 @@ int main(int argc, char *argv[])
      				Occupancy[j][2]=parameters[1];
      				Occupancy[j][3]=parameters[2];
      				ending=true;
+     				seat++;
      				//cout<<"a";
      			}
      		}
@@ -122,6 +124,7 @@ int main(int argc, char *argv[])
      				Occupancy[j][2]=parameters[1];
      				Occupancy[j][3]=parameters[2];
      				ending=true;
+     				seat++;
      				//cout<<"b";
      			}
      		}
@@ -141,6 +144,7 @@ int main(int argc, char *argv[])
      				Occupancy[j][2]=parameters[1];
      				Occupancy[j][3]=parameters[2];
      				ending=true;
+     				seat++;
      				//cout<<"c";
      				}
      			}
@@ -164,13 +168,15 @@ int main(int argc, char *argv[])
      				Occupancy[j][2]=parameters[1];
      				Occupancy[j][3]=parameters[2];
      				ending=true;
+     				seat++;
      				//cout<<"d";
      				}
      			}
      		}
      	}
      	ending=false;
-     	cout<<i<<endl;
+     	//cout<<i<<endl;
+     	//cout<<i%100<<" "<<Occupancy[i][1]<<" "<<Occupancy[i][2]<<" "<<Occupancy[i][3]<<"\n";
      }
           	for(int t=0; t<plan_cars; t++)
           	{
